@@ -1,11 +1,10 @@
 #!/bin/bash
 
 
-obra_formatada=$(awk 'NR==119,NR==10394' "O_cortico.txt")
 titulo=$(grep -A 1 "Title" O_cortico.txt | sed 's/Title://')
-n_linhas=$(awk 'NR==119,NR==10394' "O_cortico.txt" | wc -l)
-n_palavras=$(echo $obra_formatada | wc -w)
-n_caracteres=$(echo $obra_formatada | wc -m)
+n_linhas=$(wc -l "O_cortico.txt")
+n_palavras=$(wc -w "O_cortico.txt")
+n_caracteres=$(wc -c "O_cortico.txt")
 ano_publicacao=$(grep -A 1 "Original publication" O_cortico.txt | sed -n '5s/[^0-9]*\([0-9]\+\).*/\1/p')
 
 
